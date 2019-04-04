@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const mongoose = require('mongoose');
 const app = express();
-const PORT = 7000;
+const PORT = process.env.PORT || 7000;
 
 require('dotenv').config({ path: 'variables.env' });
 
@@ -34,8 +34,8 @@ app.use(
 		resave: false,
 		saveUninitialized: false,
 		cookie: {
-			expires: 600000
-		}
+			expires: 600000,
+		},
 	})
 );
 
