@@ -1,0 +1,14 @@
+extend layout
+
+block content
+    form(action='/create-place' method="POST" enctype="multipart/form-data").form
+        h1.form-title   Create a new place
+        label.label(for="name") Name
+        input.input(type="text" placeholder="Name" name="name" required)
+        label.label(for="description") Description
+        textarea.textarea(type="text" placeholder="Description" name="description")
+        label.label(for="address") Address
+        input.input(type="text" placeholder="Address" name="address" required)
+        label.label(for="photo") Place Photo
+        input.input(type="file" placeholder="Photo" name="photo" accept="image/gif, image/png, image/jpeg")
+        button.button(type="submit") Create

@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title #{title}
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href=`/css/${styleFile}`)
+  body
+    main
+      block header
+        nav.navbar
+          a(href="/")
+            img.logo(src="/images/logo.png" alt="Logo image")
+          .menu
+            if user
+              a.link(href="/create-place") Create place
+              a.link(href="/signout") Sign out
+              a.link(href="/account") #{user.username}
+            else
+              a.link(href="/login") Login
+              a.link(href="/register") Sign up
+      block errors
+        if errors
+          .errors-container
+            each error in errors
+              .error-message #{error}
+      block content

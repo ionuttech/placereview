@@ -1,0 +1,10 @@
+extend layout
+
+block content
+    form.form(action="/login" method="post")
+        h1.form-title   Login into your account
+        label.label(for="username") Username
+        input.input(type="username" placeholder="username" name="username" required)
+        label.label(for="password") Password
+        input.input(type="password" placeholder="Password" name="password" required)
+        button.button(type="submit") Login

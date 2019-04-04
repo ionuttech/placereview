@@ -1,0 +1,141 @@
+.single__hero {
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.single__hero:before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, #348f50fc, #56b4d3fc);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.single__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.title {
+    word-wrap: break-word;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.1;
+    -ms-transform: skew(0, -3deg);
+    transform: skew(0, -3deg);
+    line-height: 1.1;
+}
+
+.title--single {
+    max-width: 600px;
+    margin-top: -5rem;
+    font-size: 6rem;
+    text-align: center;
+}
+
+.title a {
+    border-bottom: 0;
+    background-image: linear-gradient(to right, rgba(255, 196, 14, 0.8) 100%, rgba(255, 196, 14, 0.8) 50%);
+}
+
+a {
+    text-decoration: none;
+    color: #303030;
+}
+
+.content {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    margin-top: -75px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.09);
+    background: white;
+    z-index: 10;
+}
+
+.content .address {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: -40px;
+    text-align: center;
+    padding: 10px 15px;
+    background: #303030;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.reviews {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 65px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.09);
+    background: white;
+    z-index: 10;
+}
+
+h2 {
+    margin: 5px;
+}
+
+.review-form {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.09);
+    background: white;
+}
+
+.single-review {
+    margin: 5px 0px;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.single-review .message {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+
+.single-review .author {
+    color: #3a3a3a;
+}
+
+.stars {
+    padding-left: 15px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.single-star {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}

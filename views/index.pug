@@ -1,0 +1,11 @@
+extend layout
+
+block content
+    if places
+        .places
+            each place in places
+                .place 
+                    img.photo(src=`/uploads/${place.photo}`)
+                    a(href=`/place/${place.slug}`)
+                        h1.name #{place.name}
+                    p.description #{place.description}

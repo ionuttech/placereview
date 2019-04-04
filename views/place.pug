@@ -1,0 +1,42 @@
+extends layout
+
+block content
+    .single__hero
+      img.single__image(src=`/uploads/${place.photo || 'store.png'}`)
+      h2.title.title--single
+        a(href=`/place/${place.slug}`) #{place.name}
+    .content
+        p.address #{place.address}
+        p.description #{place.description}
+    .reviews
+      if reviews
+        each review in reviews
+          .single-review 
+            .author #{review.author.username} (#{review.author.email})
+            .message #{review.message}
+            .stars
+              each n in [1,2,3,4,5]
+                if n <= review.rating
+                  img(src="/images/star-full.png").single-star
+                else
+                  img(src="/images/star-empty.png").single-star
+
+
+
+    .review-form
+      if user
+        .create-review
+          form(method="post", action=`/create-review/${place._id}`)
+            h2 Write a review
+            label.label(for="rating") Choose a rating:
+            select.select(name="rating" required)
+              option(value="1") Very bad
+              option(value="2") Bad
+              option(value="3") Normal
+              option(value="4") Good
+              option(value="5") Excellent
+            label.label(for="message") Message:
+            textarea.textarea(name="message" placeholder="Write your review here" required maxlength="500")
+            button.button(type="submit") Submit
+      else
+        .login-review You must login in order to create a review
